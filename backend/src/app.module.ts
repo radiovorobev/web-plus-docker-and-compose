@@ -20,7 +20,7 @@ import { ConfigModule, ConfigService } from '@nestjs/config';
       host: new ConfigService().get<string>('DATABASE_HOST'),
       port: Number(new ConfigService().get<string>('DATABASE_PORT')),
       username: new ConfigService().get<string>('DATABASE_USERNAME'),
-      password: new ConfigService().get<string>('DATABASE_PASSWORD'),
+      password: new ConfigService().get<string>('POSTGRES_PASSWORD'),
       database: new ConfigService().get<string>('DATABASE_NAME'),
       entities: [User, Wish, Wishlist, Offer],
       synchronize: true,

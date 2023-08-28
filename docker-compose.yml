@@ -3,7 +3,7 @@ services:
   database:
     image: postgres:12-alpine
     env_file:
-      - .env
+      - backend/.env
     container_name: postgres
     volumes:
       - database:/data/postgres
@@ -18,7 +18,7 @@ services:
       dockerfile: Dockerfile
     image: backend
     env_file:
-      - .env
+      - backend/.env
     depends_on:
       - database
     container_name: kpd-backend

@@ -1,8 +1,9 @@
-FROM node:16-alpine AS builder
+FROM node:16.10.0-alpine AS builder
 WORKDIR /app
+COPY package*.json ./
 RUN npm ci --no-audit --no-fund
-COPY . .
-RUN npm build
+COPY . ./
+RUN npm run build
 
 FROM nginx:latest AS prod
 COPY --from=builder /app/build /usr/share/nginx/html
