@@ -1,17 +1,5 @@
 version: "3"
 services:
-  database:
-    image: postgres:12-alpine
-    env_file:
-      - backend/.env
-    container_name: postgres
-    volumes:
-      - database:/data/postgres
-    networks:
-      - backend-network
-    ports:
-      - "5432:5432"
-    restart: on-failure
   backend:
     build:
       context: ./backend
@@ -26,6 +14,18 @@ services:
       - backend-network
     ports:
       - "4000:4000"
+    restart: on-failure
+  database:
+    image: postgres:12-alpine
+    env_file:
+      - backend/.env
+    container_name: postgres
+    volumes:
+      - database:/data/postgres
+    networks:
+      - backend-network
+    ports:
+      - "5432:5432"
     restart: on-failure
   frontend:
     build:
