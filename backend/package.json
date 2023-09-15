@@ -1,8 +1,8 @@
 {
-  "name": "kupipodariday-backend",
+  "name": "kpd-backend",
   "version": "0.0.1",
-  "description": "service for wishes",
-  "author": "Shika Ito",
+  "description": "kpd",
+  "author": "Sergey Vorobev",
   "private": true,
   "license": "UNLICENSED",
   "scripts": {
